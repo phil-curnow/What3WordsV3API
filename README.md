@@ -27,7 +27,7 @@ You should include the following usings in your code to use the API wrapper:
 ```csharp
 using Curnow.Biz.What3WordsV3Net;
 using Curnow.Biz.What3WordsV3Net.Enums;
-using Curnow.Bix.What3WordsV3Net.Models;
+using Curnow.Biz.What3WordsV3Net.Models;
 ```
 
 ## Creating an instance of W3WClient
