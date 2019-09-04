@@ -24,7 +24,7 @@ There are also Asynchronous versions of all these methods, which are:
 
 You should include the following usings in your code to use the API wrapper:
 
-'''csharp
+'''Java
 using Curnow.Biz.What3WordsV3Net;
 using Curnow.Biz.What3WordsV3Net.Enums;
 using Curnow.Bix.What3WordsV3Net.Models;
@@ -34,27 +34,27 @@ using Curnow.Bix.What3WordsV3Net.Models;
 
 Creating an instance of the API wrapper is very easy, you simply need to supply your API key as follows:
 
-'''csharp
+'''Java
 W3WClient w3w = new W3WClient("<<your api key>>");
 '''
 
 ## ConvertTo3WA Example
 
-'''csharp
+'''Java
 AddressResponse response = w3w.ConvertTo3WA(51.520847, -0.19552);
 Console.WriteLine($"Country: {response.country}\nWords: {response.words}\n{response.language}");
 '''
 
 There is an optional language parameter that can be used on this method. If language isn't supplied, the default used is en (English):
 
-'''csharp
+'''Java
 AddressResponse response = w3w.ConvertTo3WA(51.520847, -0.19552, "fr");
 Console.WriteLine($"Country: {response.country}\nWords: {response.words}\n{response.language}");
 '''
 
 ## ConvertToCoordinates
 
-'''csharp
+'''Java
 AddressResponse response = w3w.ConvertToCoordinates("pinch","veal","sector");
 Console.WriteLine($"Country: {response.country}\nURL@ {response.map}\nCoords: {response.coordinates.lat},{response.coordinates.lng}");
 
@@ -64,14 +64,14 @@ Console.WriteLine($"Country: {response.country}\nURL@ {response.map}\nCoords: {r
 
 ## AvailableLanguages
 
-'''csharp
+'''Java
 LanguagesResponse response = w3w.AvailableLanguages();
 response.languages.ForEach(l => { Console.WriteLine($"Native: {l.nativeName} - Code: {l.code} - Name: {l.name}"); });
 '''
 
 ## GridSection
 
-'''csharp
+'''Java
 GridSectionResponse response = w3w.GridSection(new BoundingBox
 {
     South = 52.207988,
@@ -86,7 +86,7 @@ response.lines.ForEach(l => { Console.WriteLine($"Start: {l.start.lng}, {l.start
 
 There are many optional parameters that can be supplied with this method call. Please refer to the [what3words API documentation](https://docs.what3words.com/api/v3/#overview) for this.
 
-'''csharp
+'''Java
 AutoSuggestResponse response = w3w.AutoSuggest("plan.clips.a");
 foreach (var r in result.suggestions)
     Console.WriteLine($"Country: {r.country}\nNearest: {r.nearestPlace}\nWords: {r.words}\ndistancetoFocus: {r.distanceToFocusKm}\nRank: {r.rank}\nLanguage: {r.language}\n\n");
@@ -96,7 +96,7 @@ foreach (var r in result.suggestions)
 
 The library handles an exceptions by throwing an exception of the type W3WException. There are specific errors returned by the what3words API based on HTTP Response code. Please refer to the [what3words API documentation](https://docs.what3words.com/api/v3/#overview) for this information.
 
-'''csharp
+'''Java
 try
 {
   ...
