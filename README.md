@@ -88,7 +88,7 @@ There are many optional parameters that can be supplied with this method call. P
 
 ```csharp
 AutoSuggestResponse response = w3w.AutoSuggest("plan.clips.a");
-foreach (var r in result.suggestions)
+foreach (var r in response.suggestions)
     Console.WriteLine($"Country: {r.country}\nNearest: {r.nearestPlace}\nWords: {r.words}\ndistancetoFocus: {r.distanceToFocusKm}\nRank: {r.rank}\nLanguage: {r.language}\n\n");
 ```
 
