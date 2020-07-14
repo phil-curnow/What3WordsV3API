@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Curnow.Biz.What3WordsV3Net.Models
 {
+    [Serializable]
     public class W3WException : Exception
     {
         private string _code;
@@ -25,6 +27,16 @@ namespace Curnow.Biz.What3WordsV3Net.Models
         public string W3WMessage
         {
             get { return _message; }
+        }
+
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            if (info == null)
+                throw new ArgumentException("W3WException.GetObject: SerializationInfo cannot be null");
+
+            info.AddValue("W3WCode", _code);
+            info.AddValue("W3WMessage", _message);
+            base.GetObjectData(info, context);
         }
     }
 }
