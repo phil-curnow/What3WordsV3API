@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>3.0.0.2</Version>
+    <Authors>Phil Curnow</Authors>
+    <Description>Unofficial .NET Wrapper for V3 of the What3Words API. This wrapper fully implements all methods in the What3Words V3 api.</Description>
+    <Copyright>Copyright 2020 Phil Curnow</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/phil-curnow/What3WordsV3API</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/phil-curnow/What3WordsV3API</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <PackageTags>What3Words API What3WordsV3 Version3 C# csharp</PackageTags>
+    <PackageReleaseNotes>New release of package which is now targeted for .NET Standard 2.0</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>
